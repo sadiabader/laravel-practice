@@ -44,12 +44,9 @@ use App\Http\Controllers\employe;
 // });
 // Route::get('/contact', singleAction::class)->name('contact');
 
-// Route::get('/register',[Form::class, 'register']);
-// Route::post('/register',[Form::class, 'register_data']);
+Route::get('/register',[Form::class, 'register']);
+Route::post('/register',[Form::class, 'register_data']);
+Route::get('/user-view',[Form::class, 'user_view']);
+Route::get('/user-dlt/{id}',[Form::class, 'dlt'])->name('user-dlt');
+Route::get('/user-update/{id}',[Form::class, 'update'])->name('user-update');
 
-// Route::get('/user-view',[Form::class, 'user_view']);
-
-Route::get('/employe',[Form::class, 'employe']);
-Route::post('/employe',[Form::class, 'employe_data']);
-
-Route::get('/emp-view',[Form::class, 'emp_view']);

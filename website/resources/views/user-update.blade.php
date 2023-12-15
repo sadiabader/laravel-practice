@@ -19,62 +19,45 @@
     </head>
 
     <body>
-      <div class="container">
 
-   <div class="table-responsive">
+        <div class="container">
 
-   <h1 class="text-center my-5"> user information </h1>
-
- <table class="table">
-
-<thead class="table-dark">
-   <tr>
-  <th scope="col">user id</th>
-  <th scope="col">user name</th>
-  <th scope="col">user email</th>
-  <th scope="col">Delete</th>
-  <th scope="col">Update</th>
-   </tr>
-</thead>
-<tbody>
-    @foreach ($records as $item)
-        
-    
-  <tr class="">
-   <td scope="row">{{$item->id}}</td>
-  <td>{{$item->name}}</td>
-  <td>{{$item->email}}</td>
-  <td><a class="btn btn-danger" href="{{route('user-dlt', $item->id)}}">Delete</a></td>
-  <td><a class="btn btn-success" href="{{route('user-update', $item->id)}}">Update</a></td>
-  </tr>
-  @endforeach
- 
-
-</tbody>
-
-
-
-
-
-
- </table>
-
-
-
-   </div>
-
-
-
-
-
-      </div>
-
-
-
-
-
-
-
+          
+            
+            <form action="{{url('/')}}/register" method="POST">
+            @csrf
+            <h1>update Information</h1>
+            
+            <div class="mb-3">
+            
+            <label for="name" class="form-label"> Name</label>
+            <input type="name"class="form-control"name="name" placeholder="Enter your Name" value="{{$records->name}}">
+            <span class="text-danger">
+                <span class="text-danger">
+                    @error('name');
+                        {{$message}}
+                    @enderror
+                  </span>
+                  <br>
+            <br>
+            <label for="email" class="form-label"> Email</label>
+            <input type="email"class="form-control"name="email" placeholder="Enter your Email"value="{{$records->email}}">
+            <span class="text-danger">
+                @error('email');
+                    {{$message}}
+                @enderror
+              </span>
+              <br>
+              <br>
+           
+            <br>
+            <input type="submit"name="update" value="update" class="btn btn-success">
+            
+            </div>
+            
+            </form>
+            
+                </div>
         <header>
             <!-- place navbar here -->
         </header>
