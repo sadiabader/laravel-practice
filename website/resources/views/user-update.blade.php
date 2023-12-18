@@ -24,7 +24,7 @@
 
           
             
-            <form action="{{url('/')}}/register" method="POST">
+            <form action="{{url('/')}}/user-edit/{{$records->id}}" method="POST">
             @csrf
             <h1>update Information</h1>
             
@@ -49,8 +49,6 @@
               </span>
               <br>
               <br>
-           
-            <br>
             <input type="submit"name="update" value="update" class="btn btn-success">
             
             </div>

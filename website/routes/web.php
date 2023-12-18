@@ -46,7 +46,12 @@ use App\Http\Controllers\employe;
 
 Route::get('/register',[Form::class, 'register']);
 Route::post('/register',[Form::class, 'register_data']);
-Route::get('/user-view',[Form::class, 'user_view']);
+Route::get('/user-view',[Form::class, 'user_view'])->name('user-view');
 Route::get('/user-dlt/{id}',[Form::class, 'dlt'])->name('user-dlt');
 Route::get('/user-update/{id}',[Form::class, 'update'])->name('user-update');
+Route::post('/user-edit/{id}',[Form::class, 'edit'])->name('edit');
 
+
+Auth::routes();
+
+Route::get('/register', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

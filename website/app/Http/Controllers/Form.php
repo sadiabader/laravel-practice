@@ -55,4 +55,16 @@ public function update($id){
     $data = compact('records');
     return view('user-update')->with($data);
 }
+public function edit($id, Request $request){
+
+    $records = Formmodel::find($id);
+        $records->name = $request['name'];
+        $records->email = $request['email'];
+    
+        $records->save();
+        return redirect('/user-view');
+    
+    }
+
+
 }
